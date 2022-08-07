@@ -17,7 +17,7 @@ In all cases, the source data for the metrics comes from elsewhere. If something
 | GC              | Java API ([jdk.management/GarbageCollectorMXBean](https://docs.oracle.com/en/java/javase/17/docs/api/jdk.management/com/sun/management/GarbageCollectorMXBean.html)) |
 | Network Usage   | `/proc/net/dev` (Linux only)                            |
 | Player Ping     | Server API (via spark's `PlayerPingProvider` interface) |
-| CPU Name        | `/proc/cpuinfo` (Linux only)                            |
+| CPU Name        | `/proc/cpuinfo` on Linux, `wmic` on Windows             |
 
 ### Containers and Docker
 Occasionally, we see some metrics (mostly CPU/Memory Usage) being misreported when the server (and by extension spark) is running inside a container (Pterodactyl, etc). 
